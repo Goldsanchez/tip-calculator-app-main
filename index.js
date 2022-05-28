@@ -154,10 +154,6 @@ custom.addEventListener("click", ((e) => {
         zeroPeople.style.color = "orange"
         zeroPeople.style.fontWeight = "700"
 
-    }else {
-        console.log("X")
-        zeroPeople.textContent = ""
-        people.style.border = "2px solid var(--Very-light-grayish-cyan)"
     }
 }))
 
@@ -165,9 +161,12 @@ custom.addEventListener("click", ((e) => {
 
 // Reset Bill
 bill.addEventListener("input", ((e) => {
-    
+
     if (bill.value >= 0) {
         reset.style.opacity = "1.0"
+        zeroBill.textContent = ""
+        bill.style.border = "2px solid var(--Very-light-grayish-cyan)"
+
         reset.addEventListener("click", ((e) => {
             bill.value = ""
             people.value = ""
@@ -184,8 +183,8 @@ bill.addEventListener("input", ((e) => {
             
 
         }))
-    } else if( bill.value == "" || bill.value === 0) {
-        reset.style.opacity = "0.3"
+    } else if (bill.value == "") {
+        reset.style.opacity = "0.3" // Faltar arreglar esto. Esto deberia opacar el boton reset.
 
     }
 }))
@@ -193,6 +192,9 @@ bill.addEventListener("input", ((e) => {
 
 // Reset People
 people.addEventListener("input", ((e) => {
+        zeroPeople.textContent = ""
+        people.style.border = "2px solid var(--Very-light-grayish-cyan)"
+
     if (people.value >= 0) {
 
         reset.style.opacity = "1.0"
@@ -231,7 +233,6 @@ custom.addEventListener("change", ((e) => {
     }
 }))
 
-// Reset button percentage
 
 
 
