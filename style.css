@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;600;700&display=swap');
 
 :root{
 --Strong-cyan: hsl(172, 67%, 45%);
@@ -40,6 +40,13 @@ main{
 }
 /* Card one */
 .card-one-bill{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.card-one-bill-title{
     color: var(--Dark-grayish-cyan);
     font-size: 16px;
     margin-bottom: 10px;
@@ -88,6 +95,7 @@ main{
     color: var(--White);
     border: 1px solid var(--Very-dark-cyan);
     padding: 2px;
+    font-weight: 700;
 }
 .grid-10{
     grid-area: b;
@@ -98,15 +106,17 @@ main{
     color: var(--White);
     border: 1px solid var(--Very-dark-cyan);
     padding: 2px;
+    font-weight: 700;
+
 }
 .grid-15{
     grid-area: c;
     border-radius: 4px;
     font-size: 25px;
     font-family: 'Space Mono', monospace;
-    background-color: var(--Strong-cyan);
-    color: var(--Very-dark-cyan);
-    border: 1px solid var(--Strong-cyan);
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    border: 1px solid var(--Very-dark-cyan);
     padding: 2px;
     font-weight: 700;
 }
@@ -119,6 +129,7 @@ main{
     color: var(--White);
     border: 1px solid var(--Very-dark-cyan);
     padding: 2px;
+    font-weight: 700;
 }
 .grid-50{
     grid-area: e;
@@ -129,6 +140,7 @@ main{
     color: var(--White);
     border: 1px solid var(--Very-dark-cyan);
     padding: 2px;
+    font-weight: 700;
 }
 .grid-custom{
     grid-area: f;
@@ -137,7 +149,7 @@ main{
     font-size: 22px;
     font-family: 'Space Mono', monospace;
     background-color: var(--Very-light-grayish-cyan);
-    color: var(--Dark-grayish-cyan);
+    color: var(--Very-dark-cyan);
     border: 1px solid var(--Very-light-grayish-cyan);
     padding: 2px;
     text-align: center;
@@ -147,7 +159,7 @@ main{
 
 .card-one-people{
     display: flex;
-    flex-direction: rox;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -211,7 +223,7 @@ main{
 .card-two-price{
     color: var(--Strong-cyan);
     grid-area: c;
-    font-size: 25px;
+    font-size: 33px;
     font-weight: 700;
     justify-self: end;
 }
@@ -227,6 +239,7 @@ main{
     font-size: 20px;
     font-weight: 700;
     font-family: 'Space Mono', monospace;
+    opacity: 0.3;
 
 }
 
@@ -270,6 +283,14 @@ main{
     .grid-custom:focus {
         text-align: right;
 
+    }
+
+    .button-percentage:hover{
+        cursor: pointer;
+        background-color: var(--Strong-cyan);
+        border: 1px solid var(--Strong-cyan);
+        color: var(--Very-dark-cyan);
+        font-weight: 700;
     }
 
     .card{
