@@ -29,7 +29,8 @@
           <button class="grid-15 button-percentage" >15%</button>
           <button class="grid-25 button-percentage" >25%</button>
           <button class="grid-50 button-percentage" >50%</button>
-          <input  class="grid-custom" type="text" name="" id="bill" placeholder="Custom">
+          <input  class="grid-custom" type="number" name="" id="bill" placeholder="Custom" oninput="this.value = 
+          !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
         </div>
         <div class="card-one-people">
           <h2 class="card-one-people-title">Number of People</h2><p class="zero-people"></p>

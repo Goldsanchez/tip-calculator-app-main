@@ -233,6 +233,12 @@ people.addEventListener("input", ((e) => {
 
 // Reset Custom
 custom.addEventListener("input", ((e) => {
+    for (let index = 0; index < buttons.length; index++) {
+        buttons[index].style.backgroundColor = "var(--Very-dark-cyan)"
+        buttons[index].style.border = "1px solid var(--Very-dark-cyan)"
+        buttons[index].style.color = "var(--White)"
+    }
+
     if (custom.value >= 0) {
 
         reset.style.opacity = "1.0"
