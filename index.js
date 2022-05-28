@@ -36,6 +36,8 @@ buttons.forEach((button, index) => {
             buttons[index].style.border = "1px solid var(--Strong-cyan)"
             buttons[index].style.color = "var(--Very-dark-cyan)"
 
+            
+
             if(index === 0){
                 buttons[1].style.backgroundColor = "var(--Very-dark-cyan)"
                 buttons[1].style.border = "var(--Very-dark-cyan)"
@@ -132,19 +134,26 @@ custom.addEventListener("click", ((e) => {
         zeroPeople.style.fontFamily = "Space Mono, monospace"
         zeroPeople.style.color = "orange"
         zeroPeople.style.fontWeight = "700"
+        zeroPeople.style.fontSize = "15px"
 
         bill.style.border = "2px solid orange"
         zeroBill.textContent = "Can't be zero"
         zeroBill.style.fontFamily = "Space Mono, monospace"
         zeroBill.style.color = "orange"
         zeroBill.style.fontWeight = "700"
+        zeroBill.style.fontSize = "15px"
+
+        custom.disabled = true
 
     }else if(bill.value === "0" || bill.value === ""){
         bill.style.border = "2px solid orange"
         zeroBill.textContent = "Can't be zero"
         zeroBill.style.fontFamily = "Space Mono, monospace"
         zeroBill.style.color = "orange"
-        zeroBill.style.fontWeight = "700"  
+        zeroBill.style.fontWeight = "700" 
+        zeroBill.style.fontSize = "15px"
+
+        custom.disabled = true
 
         
     }else if (people.value === "0" || people.value === "") {
@@ -153,8 +162,14 @@ custom.addEventListener("click", ((e) => {
         zeroPeople.style.fontFamily = "Space Mono, monospace"
         zeroPeople.style.color = "orange"
         zeroPeople.style.fontWeight = "700"
+        zeroPeople.style.fontSize = "15px"
 
+        custom.disabled = true
+
+    }else if(people.value > 0 && bill.value > 0){
+        custom.disabled = false
     }
+        
 }))
 
 
@@ -162,10 +177,12 @@ custom.addEventListener("click", ((e) => {
 // Reset Bill
 bill.addEventListener("input", ((e) => {
 
-    if (bill.value >= 0) {
+    if (bill.value >= 0 || (bill.value > 0 && people.value > 0)) {
         reset.style.opacity = "1.0"
         zeroBill.textContent = ""
         bill.style.border = "2px solid var(--Very-light-grayish-cyan)"
+
+        custom.disabled = false
 
         reset.addEventListener("click", ((e) => {
             bill.value = ""
@@ -180,12 +197,12 @@ bill.addEventListener("input", ((e) => {
                 buttons[index].style.border = "1px solid var(--Very-dark-cyan)"
                 buttons[index].style.color = "var(--White)"
             }
+            reset.style.opacity = "0.3"
             
 
         }))
     } else if (bill.value == "") {
         reset.style.opacity = "0.3" // Faltar arreglar esto. Esto deberia opacar el boton reset.
-
     }
 }))
 
@@ -206,6 +223,7 @@ people.addEventListener("input", ((e) => {
             total.textContent = "$00.00"
             zeroPeople.textContent = ""
             people.style.border = "2px solid var(--Very-light-grayish-cyan)"
+            reset.style.opacity = "0.3"
 
         }))
     } else {
@@ -214,7 +232,7 @@ people.addEventListener("input", ((e) => {
 }))
 
 // Reset Custom
-custom.addEventListener("change", ((e) => {
+custom.addEventListener("input", ((e) => {
     if (custom.value >= 0) {
 
         reset.style.opacity = "1.0"

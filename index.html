@@ -20,7 +20,8 @@
         <div class="card-one-bill">
           <h1 class="card-one-bill-title">Bill</h1><p class="zero-bill"></p>
         </div>
-        <input class="card-one-bill-input" type="text" placeholder="0">
+        <input class="card-one-bill-input" placeholder="0" type="number" min="0" oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" >
         <h2 class="card-one-tip">Select Tip %</h2>
         <div class="grid">
           <button class="grid-5 button-percentage">5%</button>
@@ -33,7 +34,8 @@
         <div class="card-one-people">
           <h2 class="card-one-people-title">Number of People</h2><p class="zero-people"></p>
         </div>
-        <input class="card-one-people-input" type="text" name="" id="" placeholder="0">
+        <input class="card-one-people-input" type="number" name="" id="" placeholder="0" oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
       </div>
       <div class="card-two">
         <div class="card-two-tip">
