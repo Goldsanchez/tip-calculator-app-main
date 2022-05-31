@@ -30,15 +30,15 @@ buttons.forEach((button, index) => {
             button.disabled = false
             total.textContent = "$" + ((Number(bill.value) * ((Number(tip) / 100) + 1)) / Number(people.value)).toFixed(2)
             tipAmount.textContent = "$" + ((Number(bill.value) * ((Number(tip) / 100) + 1)) / Number(people.value) -
-                                            Number(bill.value) / Number(people.value)).toFixed(2)
+                Number(bill.value) / Number(people.value)).toFixed(2)
             zeroPeople.textContent = ""
             buttons[index].style.backgroundColor = "var(--Strong-cyan)"
             buttons[index].style.border = "1px solid var(--Strong-cyan)"
             buttons[index].style.color = "var(--Very-dark-cyan)"
 
-            
 
-            if(index === 0){
+
+            if (index === 0) {
                 buttons[1].style.backgroundColor = "var(--Very-dark-cyan)"
                 buttons[1].style.border = "var(--Very-dark-cyan)"
                 buttons[1].style.color = "var(--White)"
@@ -52,7 +52,7 @@ buttons.forEach((button, index) => {
                 buttons[4].style.border = "var(--Very-dark-cyan)"
                 buttons[4].style.color = "var(--White)"
             }
-            if(index === 1){
+            if (index === 1) {
                 buttons[0].style.backgroundColor = "var(--Very-dark-cyan)"
                 buttons[0].style.border = "var(--Very-dark-cyan)"
                 buttons[0].style.color = "var(--White)"
@@ -66,7 +66,7 @@ buttons.forEach((button, index) => {
                 buttons[4].style.border = "var(--Very-dark-cyan)"
                 buttons[4].style.color = "var(--White)"
             }
-            if(index === 2){
+            if (index === 2) {
                 buttons[1].style.backgroundColor = "var(--Very-dark-cyan)"
                 buttons[1].style.border = "var(--Very-dark-cyan)"
                 buttons[1].style.color = "var(--White)"
@@ -80,7 +80,7 @@ buttons.forEach((button, index) => {
                 buttons[4].style.border = "var(--Very-dark-cyan)"
                 buttons[4].style.color = "var(--White)"
             }
-            if(index === 3){
+            if (index === 3) {
                 buttons[1].style.backgroundColor = "var(--Very-dark-cyan)"
                 buttons[1].style.border = "var(--Very-dark-cyan)"
                 buttons[1].style.color = "var(--White)"
@@ -94,7 +94,7 @@ buttons.forEach((button, index) => {
                 buttons[4].style.border = "var(--Very-dark-cyan)"
                 buttons[4].style.color = "var(--White)"
             }
-            if(index === 4){
+            if (index === 4) {
                 buttons[1].style.backgroundColor = "var(--Very-dark-cyan)"
                 buttons[1].style.border = "var(--Very-dark-cyan)"
                 buttons[1].style.color = "var(--White)"
@@ -122,13 +122,13 @@ custom.addEventListener("input", ((e) => {
     } else {
         total.textContent = "$" + ((Number(bill.value) * ((Number(e.target.value) / 100) + 1)) / Number(people.value)).toFixed(2)
         tipAmount.textContent = "$" + ((Number(bill.value) * ((Number(e.target.value) / 100) + 1)) / Number(people.value) -
-                                        Number(bill.value) / Number(people.value)).toFixed(2)
+            Number(bill.value) / Number(people.value)).toFixed(2)
     }
 }))
 
 custom.addEventListener("click", ((e) => {
 
-    if((people.value === "0" || people.value === "") && (bill.value === "0" || bill.value === "")){
+    if ((people.value === "0" || people.value === "") && (bill.value === "0" || bill.value === "")) {
         people.style.border = "2px solid orange"
         zeroPeople.textContent = "Can't be zero"
         zeroPeople.style.fontFamily = "Space Mono, monospace"
@@ -145,18 +145,18 @@ custom.addEventListener("click", ((e) => {
 
         custom.disabled = true
 
-    }else if(bill.value === "0" || bill.value === ""){
+    } else if (bill.value === "0" || bill.value === "") {
         bill.style.border = "2px solid orange"
         zeroBill.textContent = "Can't be zero"
         zeroBill.style.fontFamily = "Space Mono, monospace"
         zeroBill.style.color = "orange"
-        zeroBill.style.fontWeight = "700" 
+        zeroBill.style.fontWeight = "700"
         zeroBill.style.fontSize = "15px"
 
         custom.disabled = true
 
-        
-    }else if (people.value === "0" || people.value === "") {
+
+    } else if (people.value === "0" || people.value === "") {
         people.style.border = "2px solid orange"
         zeroPeople.textContent = "Can't be zero"
         zeroPeople.style.fontFamily = "Space Mono, monospace"
@@ -166,10 +166,10 @@ custom.addEventListener("click", ((e) => {
 
         custom.disabled = true
 
-    }else if(people.value > 0 && bill.value > 0){
+    } else if (people.value > 0 && bill.value > 0) {
         custom.disabled = false
     }
-        
+
 }))
 
 
@@ -198,7 +198,7 @@ bill.addEventListener("input", ((e) => {
                 buttons[index].style.color = "var(--White)"
             }
             reset.style.opacity = "0.3"
-            
+
 
         }))
     } else if (bill.value == "") {
@@ -209,8 +209,8 @@ bill.addEventListener("input", ((e) => {
 
 // Reset People
 people.addEventListener("input", ((e) => {
-        zeroPeople.textContent = ""
-        people.style.border = "2px solid var(--Very-light-grayish-cyan)"
+    zeroPeople.textContent = ""
+    people.style.border = "2px solid var(--Very-light-grayish-cyan)"
 
     if (people.value >= 0) {
 
@@ -256,12 +256,3 @@ custom.addEventListener("input", ((e) => {
         reset.style.opacity = "0.3"
     }
 }))
-
-
-
-
-
-
-
-
-

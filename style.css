@@ -91,7 +91,7 @@ input[type=number]::-webkit-inner-spin-button {
                          "d e f";
     grid-gap: 20px;
     grid-template-columns: 33% 34% 33%;
-    margin: 10px 20px 20px 0px;
+    padding: 10px 40px 20px 0px;
 
 }
 .grid-5{
@@ -154,7 +154,7 @@ input[type=number]::-webkit-inner-spin-button {
     grid-area: f;
     border-radius: 4px;
     outline: 0;
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Space Mono', monospace;
     background-color: var(--Very-light-grayish-cyan);
     color: var(--Very-dark-cyan);
